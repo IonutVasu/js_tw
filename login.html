@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="login.js"></script>
+</head>
+<body>
+<div id="loggedIn" style="display: none">
+    Logged in as <div class="loggedUser"></div>
+    <button onclick="logOut()">
+        Log out
+    </button>
+    <br>
+</div>
+<div id="registration">
+    <form id="register-form" action="#">
+        <input id="username" type="text" placeholder="Nume" value=""/>
+        <br>
+        <input id="pw" type="password" placeholder="Parola" value="" onkeyup="valideazaParola()"/>
+        <span id="invalidPwText" style="display: none; color: red;">Parola trebuie sa aiba minim 8 caractere, litera mare, mica, numar, caracter special.</span>
+        <br>
+        <input id="email" type="email" placeholder="E-mail" value="">
+        <br>
+        <input type="radio" name="sex" value="Femeie"> Femeie
+        <input type="radio" name="sex" value="Barbat"> Barbat
+        <br>
+        Cu ce echipa tii:
+        <select id="echipa" name="echipa" form="register-form">
+            <option value="FCSB">FCSB</option>
+            <option value="Dinamo">Dinamo</option>
+            <option value="Altceva">Altceva</option>
+        </select>
+        <br>
+        La ce meciuri te uiti:
+        <input type="checkbox" id="liga1" name="meciuri" value="Liga 1" checked>
+        <label for="liga1">Liga 1</label>
+        <input type="checkbox" id="cupa" name="meciuri" value="cupa">
+        <label for="cupa">Cupa</label>
+        <input type="checkbox" id="nationala" name="meciuri" value="nationala">
+        <label for="nationala">Nationala</label>
+        <br>
+        Cat de bun esti la fotbal: <input id="bunLaFotbal" type="range" name="bunLaFotbal" min="0" max="10">
+        <br>
+        <input id="rgstr_btn" type="submit" value="Sign up" onClick="inregistreaza()"/>
+    </form>
+</div>
+
+<br><br><br><br>
+<div id="login">
+    <form id="login-form" action="#">
+        <input id="usrname" type="text" placeholder="User" value=""/>
+        <input id="userPw" type="password" placeholder="Parola" value=""/>
+        <input id="login_btn" type="submit" value="Login" onClick="verifica()"/>
+    </form>
+</div>
+
+
+</body>
+</html>
